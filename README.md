@@ -4,13 +4,6 @@ Desenvolver interface de usuário e usabilidade de aplicação web
 ##### GARGA HORÁRIA: 96 HORAS
 
 
-
-
-Desenvolver interface de usuário e usabilidade  de aplicação web
- 
-#####  CARGA HORÁRIA: 96 HORAS
- 
- 
 ## Indicadores
 1. Planeja layout, de acordo com padrões da WEB e os princípios da arquitetura da informação.  
 2. Desenvolve layout utilizando linguagens de marcação e formatação de conteúdo, conforme padrões do W3C.  
