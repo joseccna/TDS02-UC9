@@ -6,7 +6,6 @@ Desenvolver interface de usuário e usabilidade de aplicação web
 
 
 
-# TDS02-UC9
 Desenvolver interface de usuário e usabilidade  de aplicação web
  
 #####  CARGA HORÁRIA: 96 HORAS
