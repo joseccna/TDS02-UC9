@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- Captura dados do usuário -->
+    <input type="text" placeholder="Informe o CEP..." id="cepInput">
+    <!--Registra ação do usuário para buscar o endereço -->
+    <button id="btnBuscar">Buscar</button>
+    <!--Exibe o endereço ao usuário   -->
+    <p id="resultado">Aguardando busca....</p>
+
+    <script>
+    // Função assíncrona para buscar o endereço usando a API ViaCEP
+    // Async/Await é uma forma de lidar com operações assíncronas de maneira mais legível e fácil de entender, evitando o uso excessivo de callbacks.
+        const cepInput = document.getElementById("cepInput");
+        const btnBuscar = document.getElementById("btnBuscar");
+        const resultado = document.getElementById("resultado");
+
+        btnBuscar.addEventListener('click', async () => {
+            const valorDigitado =  cepInput.value; // Obtém o valor do input
+            console.log(valorDigitado);
+            var resposta = await fetch(`https://viacep.com.br/ws/${valorDigitado}/json/`)
+             var dados = await resposta.json()
+
+            // Exibe o logradouro no elemento com id "resultado"
+            document.getElementById("resultado").innerText = dados.logradouro + "\n " + dados.bairro + "\n " + dados.localidade + " \n " + dados.uf;
+
+        })
+
+
+    </script>
+  </body>
+</html>
