@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="idFornecedor">ID:</p>
+    <p id="nomeFornecedor">Nome Fantasia:</p>
+    <p id="cnpjFornecedor">CNPJ:</p>
+
+    <script>
+
+        const idFornecedor = document.getElementById("idFornecedor");
+        const nomeFornecedor = document.getElementById("nomeFornecedor");
+        const cnpjFornecedor = document.getElementById("cnpjFornecedor");
+
+        const URL = "https://localhost:7004/api/Fornecedores"
+
+        async function buscarDadosFornecedor(){
+        const resultado = await fetch(URL);
+        const dadosDoFornecedor = await resultado.json();
+
+        dadosDoFornecedor.forEach(f =>{
+            
+        })
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
