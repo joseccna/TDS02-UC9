@@ -4,6 +4,19 @@ async function carregarFornecedores() {
         const resposta = await fetch("https://localhost:7004/api/Fornecedores");
 
         const fornecedores = await resposta.json();
+        
+        const tbody = document.getElementById("tabela-fornecedores")
+        tbody.innerHTML = '';
+
+            fornecedores.forEach(fornecedor => {
+            const novaLinhaDaTabela = document.createElement('tr')
+            novaLinhaDaTabela.innerHTML = `
+                <td>${fornecedor.id}</td>
+                <td>${fornecedor.nomeFantasia}</td>
+                <td>${fornecedor.cnpj}</td>
+            `;
+            tbody.appendChild(novaLinhaDaTabela)
+        });
 
         console.log(fornecedores);
     } catch (error) {
