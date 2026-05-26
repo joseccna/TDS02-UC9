@@ -1,7 +1,8 @@
+
 async function carregarFornecedores() {
     try{
         //Toda a logica vai aqui
-        const resposta = await fetch("https://localhost:7004/api/Fornecedores");
+        const resposta = await fetch(`${API_BASE_URL}/Fornecedores`);
 
         const fornecedores = await resposta.json();
         

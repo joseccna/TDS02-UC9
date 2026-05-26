@@ -1,51 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fornecedores</title>
-    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/global.css" />
     <script src="../../js/fornecedores/list.js" defer></script>
+    <script src="../../js/config.js"></script>
     <!-- Defer faz com que o script seja carregado depois do html -->
-</head>
-<body>
-            <h1>Controle de Estoque</h1>
+  </head>
+  <body>
+    <h1>Controle de Estoque</h1>
     <header>
-        <h1>Controle de Estoque</h1>
+      <h1>Controle de Estoque</h1>
 
-        <nav>
-            <a href="../../html/index.html">Home</a>
-            <a href="index.html">Fornecedores</a>
-        </nav>
-
+      <nav>
+        <a href="../../html/index.html">Home</a>
+        <a href="../produtos/indesx.html">Produtos</a>
+        <a href="index.html">Fornecedores</a>
+        <a href="#">Contas a Receber</a>
+        <a href="#">Pedidos</a>
+        <a href="#">Usuários</a>
+      </nav>
     </header>
     <main>
-        <h2>Fornecedores</h2>
-        <a href="#">Novo Fornecedor</a>
+      <h2>Fornecedores</h2>
+      <a href="#">Novo Fornecedor</a>
 
-                <table>
-            <!--Cabeçalho-->
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Razão Social</th>
-                    <th>CPNJ</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+      <table>
+        <!--Cabeçalho-->
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Razão Social</th>
+            <th>CPNJ</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
 
-            <!--Corpo da Tabela-->
-            <tbody id="tabela-fornecedores">
-               
-            </tbody>
-        </table>
-
-
-
+        <!--Corpo da Tabela-->
+        <tbody id="tabela-fornecedores"></tbody>
+      </table>
     </main>
-
-
-
-
-</body>
+  </body>
 </html>
