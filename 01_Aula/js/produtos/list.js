@@ -8,7 +8,7 @@ async function carregarPrpodutos() {
 
             
         const tbody = document.getElementById("tabela-produtos")
-        tbody.innerHTML = '';
+        tbody.innerHTML = ''; // Limpa a tabela
 
             produtos.forEach(produto => {
             const novaLinhaDaTabela = document.createElement('tr')

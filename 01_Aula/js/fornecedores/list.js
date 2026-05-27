@@ -7,7 +7,7 @@ async function carregarFornecedores() {
         const fornecedores = await resposta.json();
         
         const tbody = document.getElementById("tabela-fornecedores")
-        tbody.innerHTML = '';
+        tbody.innerHTML = ''; // Limpa a tabela
 
             fornecedores.forEach(fornecedor => {
             const novaLinhaDaTabela = document.createElement('tr')
