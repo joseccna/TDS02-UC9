@@ -18,6 +18,14 @@ async function carregarPrpodutos() {
                 <td>${produto.preco}</td>
                 <td>${produto.quantidadeEstoque}</td>
                 <td>${produto.fornecedorId}</td>
+                <td>
+                    <a href='./detalhes.html'>Detalhes</a>
+                    <a href='#'>Editar</a>
+                    <a href='#'>Excluir</a>
+                    
+                
+                </td>
+
             `;
             tbody.appendChild(novaLinhaDaTabela)
         });
