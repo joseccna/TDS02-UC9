@@ -20,7 +20,7 @@ async function carregarFornecedores() {
                     <a href='#'>Editar</a>
                     <a href='#'>Excluir</a>
 
-                </td>
+                <td>
             `;
             tbody.appendChild(novaLinhaDaTabela)
         });

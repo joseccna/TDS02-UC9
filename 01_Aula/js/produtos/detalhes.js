@@ -6,7 +6,7 @@ const id = urlParams.get('id');
 async function buscarDetalhes() {
 
     try{
-        const response = await fetch(`http://10.24.90.15:5143/api/produtos/${id}`);
+        const response = await fetch(`${API_BASE_URL}/produtos/${id}`);
         const produto = await response.json();
 
         document.getElementById('dados-produto').innerHTML = `
