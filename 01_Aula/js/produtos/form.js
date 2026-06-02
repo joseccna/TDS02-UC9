@@ -53,8 +53,6 @@ async function salvarProduto() {
 
         console.error("Erro ao salvar produto:", error);
 
-        // faz algo aqui depois
-
     }
 
     // cadastrando com sucesso, retornar para o index de produtos
