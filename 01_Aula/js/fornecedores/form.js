@@ -2,7 +2,7 @@ const form = document.getElementById("form-fornecedor");
 
 async function salvarFornecedor(){
 
-    // criar o evento de 'submit' no formulário
+    // capturar o evento 'click' em botaoSalvar de 'submit' no formulário
     form.addEventListener('submit', async (e) =>{
         e.preventDefault();
 

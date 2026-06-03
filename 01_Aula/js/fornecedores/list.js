@@ -18,7 +18,7 @@ async function carregarFornecedores() {
                 <td>
                     <a href="./detalhes.html?id=${fornecedor.id}">Detalhes</a>
                     <a href='#'>Editar</a>
-                    <a href='#'>Excluir</a>
+                    <a href='../fornecedores/excluir.html?id=${fornecedor.id}' onclick="excluirFornecedor(${fornecedor.id})">Excluir</a>
 
                 <td>
             `;
@@ -33,3 +33,4 @@ async function carregarFornecedores() {
 }
 
 carregarFornecedores();
+

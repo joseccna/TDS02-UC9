@@ -21,7 +21,7 @@ async function carregarPrpodutos() {
                 <td>
                     <a href="./detalhes.html?id=${produto.id}">Detalhes</a>
                     <a href='#'>Editar</a>
-                    <a href='#'>Excluir</a>
+                    <a href='../produtos/excluir.html?id=${produto.id}' onclick="excluirProduto(${produto.id})">Excluir</a>
                     
                 
                 </td>

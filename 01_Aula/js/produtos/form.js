@@ -1,7 +1,7 @@
 const form = document.getElementById("form-produto");
 async function salvarProduto() {
 
-    // caíirar p evemtp de 'click' em botaoSalvar
+    // capturar o evento 'click' em botaoSalvar de 'submit' no formulário
     form.addEventListener('submit', async (e) =>{
         e.preventDefault();
 
