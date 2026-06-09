@@ -1,43 +1,28 @@
+async function carregarProdutos() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/Produtos`);
+        const produtos = await response.json();
+        
+        const tbody = document.getElementById('tabela-produtos');
+        tbody.innerHTML = '';
 
-async function carregarPrpodutos() {
-
-    try{
-        const resposta = await fetch(`${API_BASE_URL}/Produtos`);
-
-        const produtos = await resposta.json();
-
-            
-        const tbody = document.getElementById("tabela-produtos")
-        tbody.innerHTML = ''; // Limpa a tabela
-
-            produtos.forEach(produto => {
-            const novaLinhaDaTabela = document.createElement('tr')
-            novaLinhaDaTabela.innerHTML = `
+        produtos.forEach(produto => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
                 <td>${produto.id}</td>
                 <td>${produto.nome}</td>
-                <td>${produto.preco}</td>
-                <td>${produto.quantidadeEstoque}</td>
-                <td>${produto.fornecedorId}</td>
-                <td>
-                    <a href="./detalhes.html?id=${produto.id}">Detalhes</a>
-                    <a href='../produtos/form.html?id=${produto.id}'>Editar</a>
-                    <a href='../produtos/excluir.html?id=${produto.id}' onclick="excluirProduto(${produto.id})">Excluir</a>
-                    
-                
+                <td>R$ ${produto.preco.toFixed(2)}</td>
+                <td class="actions">
+                    <a href="detalhes.html?id=${produto.id}">Detalhes</a>
+                    <a href="form.html?id=${produto.id}">Editar</a>
+                    <a href="excluir.html?id=${produto.id}" style="color: var(--danger-color);">Excluir</a>
                 </td>
-
             `;
-            tbody.appendChild(novaLinhaDaTabela)
+            tbody.appendChild(tr);
         });
-
-        console.log(produtos);
-
     } catch (error) {
-        console.error('Erro ao carregar os produtos:', error);
-    
-    
+        console.error("Erro ao carregar os produtos:", error);
     }
-
 }
 
-carregarPrpodutos();
+carregarProdutos();

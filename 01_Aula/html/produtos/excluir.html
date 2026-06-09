@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Produto</title>
     <link rel="stylesheet" href="../../css/global.css">
-    <script src="../../js/produtos/excluir.js" defer></script>
     <script src="../../js/config.js"></script>
-
+    <script src="../../js/produtos/excluir.js" defer></script>
 </head>
 <body>
-        <h1>Controle de Estoque</h1>
-
     <header>
-      <h1>Controle de Estoque</h1>
-
-      <nav>
-        <a href="../../html/index.html">Home</a>
-        <a href="../produtos/indesx.html">Produtos</a>
-        <a href="index.html">Fornecedores</a>
-        <a href="#">Contas a Receber</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Usuários</a>
-      </nav>
+        <h1>Controle de Estoque</h1>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="index.html">Produtos</a>
+        </nav>
     </header>
 
     <main>
         <h2>Confirmar Exclusão</h2>
-        <p>Você tem certeza que deseja excluir este produto?</p>
-        <div id="dados-produto" style="margin-bottom: 20px;">
-            <!-- prenchido via javascript -->
-        </div>
-        <button class="button-danger" id="btn-excluir" >Sim, Excluir!</button>
-        <a href="indesx.html" class="button" style="background-color: gray;">Cancelar</a></a>
+        <p>Você tem certeza que deseja excluir o produto abaixo?</p>
+        
+        <div id="dados-produto" style="margin-bottom: 20px;"></div>
+
+        <button id="btn-excluir" class="button-danger">Sim, Excluir</button>
+        <a href="index.html" class="button" style="background-color: #6c757d;">Cancelar</a>
     </main>
-    
 </body>
 </html>
