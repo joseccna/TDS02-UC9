@@ -1,52 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Fornecedores</title>
-    <link rel="stylesheet" href="../../css/global.css">
-    <script src="../../js/config.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Fornecedor</title>
+    <link rel="stylesheet" href="../../css/global.css" />
     <script src="../../js/fornecedores/form.js" defer></script>
-</head>
-<body>
-     </head>
+    <script src="../../js/config.js"></script>
+  </head>
   <body>
-    <h1>Controle de Estoque</h1>
-
+    <!-- Header -->
     <header>
       <h1>Controle de Estoque</h1>
-
       <nav>
-        <a href="../../html/index.html">Home</a>
-        <a href="../produtos/indesx.html">Produtos</a>
+        <a href="../../index.html">Home</a>
         <a href="index.html">Fornecedores</a>
-        <a href="#">Contas a Receber</a>
-        <a href="#">Pedidos</a>
-        <a href="#">Usuários</a>
       </nav>
     </header>
 
     <main>
-        <h2>Novo Fornecedor</h2>
+      <h2 id="titulo-pagina">Novo Fornecedor</h2>
 
-        <form id="form-fornecedor">
-            <label for="nomeFantasia">Razão Social:</label>
-            <input type="text" id="nomeFantasia" required>
+      <form id="form-fornecedor">
+        <label for="nome">Razão Social:</label>
+        <input type="text" name="nome" id="nome" />
 
+        <label for="cpnj">CNPJ:</label>
+        <input type="text" name="cpnj" id="cpnj" />
 
-            <label for="cnpj">CNPJ:</label>
-            <input type="text" id="cnpj" required>
-
-            <button type="submit">Salvar</button>
-            <a href="index.html" class="button" style="background-color:  gray;">Voltar</a></a>
-
-
-        </form>
-
+        <button type="submit">Salvar</button>
+        <a href="index.html" class="button" style="background-color: gray"
+          >Cancelar</a
+        >
+      </form>
     </main>
-
-
-
-    
-</body>
+  </body>
 </html>

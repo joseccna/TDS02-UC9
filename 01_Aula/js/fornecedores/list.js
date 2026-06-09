@@ -17,7 +17,7 @@ async function carregarFornecedores() {
                 <td>${fornecedor.cnpj}</td>
                 <td>
                     <a href="./detalhes.html?id=${fornecedor.id}">Detalhes</a>
-                    <a href='#'>Editar</a>
+                    <a href='../fornecedores/form.html?id=${fornecedor.id}'>Editar</a>
                     <a href='../fornecedores/excluir.html?id=${fornecedor.id}' onclick="excluirFornecedor(${fornecedor.id})">Excluir</a>
 
                 <td>

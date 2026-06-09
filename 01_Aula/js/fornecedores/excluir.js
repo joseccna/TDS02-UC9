@@ -37,7 +37,7 @@ document.getElementById('btn-excluir').addEventListener('click', async () => {
 
     }catch(error){
         console.log("Erro ao excluir o fornecedor:", error);
-        alert('Erro ao excluir o fornecedor. Tente novamente.');
+        alert('Erro ao excluir o fornecedor . Tente novamente.');
     }
 });
 

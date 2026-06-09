@@ -1,50 +1,69 @@
 const form = document.getElementById("form-fornecedor");
 
-async function salvarFornecedor(){
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
 
-    // capturar o evento 'click' em botaoSalvar de 'submit' no formulário
-    form.addEventListener('submit', async (e) =>{
+async function salvarFornecedor() {
+    if(id) {
+        // vou tentar atualizar um forncedor existente
+        document.getElementById('titulo-pagina').innerText = "Editar Fornecedor";
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/fornecedores/${id}`);
+            if (!response.ok) throw new Error("Erro ao carregar fornecedor!");
+
+            const fornecedor = await response.json();
+
+            console.log(fornecedor);
+
+            document.getElementById('nome').value = fornecedor.nomeFantasia;
+            document.getElementById('cpnj').value = fornecedor.cnpj;
+
+        } catch(error) {
+            console.log("Erro ao carregar fornecedor: ", error);
+            alert('Erro ao carregar dados do fornecedor');
+        }
+    }
+
+    // caputrar o evento de 'click' em 'botaoSalvar'
+    form.addEventListener('submit', async(e) => {
         e.preventDefault();
 
-        // buscar os inputs e seu valores
-        const nomeFantasia = document.getElementById("nomeFantasia").value;
-        const cnpj = document.getElementById("cnpj").value;
+        // buscar os inputs e seus valores
+        const nome = document.getElementById('nome').value
+        const cnpj = document.getElementById('cpnj').value
 
-        //adicionar validacoes
-        if(!nomeFantasia || !cnpj){
-            alert('Pro favor prenchar todos os campos obrigatórios!');
-            return; // parar a execucao da funcao
+        // adicionar validadores
+        if (!nome || !cnpj) {
+            alert('Por favor, preencha todos os campos obrigatórios!');
+            return;
         }
-
-        // tentar enviar esse valores para minha API
+        
+        // tentar enviar esses valores para minha API
         const fornecedorDados = {
-            nomeFantasia : nomeFantasia,
-            cnpj : cnpj
-        };
+            id: id ? parseInt(id) : 0,
+            nomeFantasia: nome,
+            cnpj: cnpj
+        }        
 
-        const url = `${API_BASE_URL}/fornecedores`;
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `${API_BASE_URL}/fornecedores/${id}` : `${API_BASE_URL}/fornecedores`;
 
-        try{
-
+        try {
             const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                method: method,
+                headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify(fornecedorDados)
             });
 
-            if(!response.ok){
-            throw new Error('Erro ao cadastrar o fornecedor.');
-            }
+            if (!response.ok) throw new Error("Erro ao salvar fornecedor")
 
-        window.location.href = 'index.html'; // voltar para o index
-
-        }catch(error){
-            console.error('Erro ao salvar o fornecedor:', error);
+            window.location.href = 'index.html';
+        } catch (error) {
+            console.error("Erro ao salvar: ", error);
+            alert('Erro ao salvar o fornecedor. Tente novamente!')
         }
-
     })
-
 }
+
 salvarFornecedor();
